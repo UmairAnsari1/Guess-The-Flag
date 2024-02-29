@@ -34,6 +34,10 @@ struct ContentView: View {
                     .font(.largeTitle.bold())
                     .foregroundStyle(.white)
                 
+                Text("Question \(questionCounter) of 8")
+                                   .font(.subheadline)
+                                   .foregroundColor(.gray)
+                
                 VStack(spacing : 15){
                     VStack{
                         Text("Tap the Flag")
@@ -86,11 +90,11 @@ struct ContentView: View {
     }
     func flagTapped(_ number : Int){
         if number == correcAnsawer{
-            scoreTitle = "Correct! That's the flag of \(countries[number])"
-            userScore+=100
+            scoreTitle = "Correct! That's the flag of \(countries[number])."
+            userScore+=1
         } else{
             scoreTitle = "Wrong! That's the flag of \(countries[number])."
-            userScore-=100
+            userScore-=1
         }
         
         showingScore = true
